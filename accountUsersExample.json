@@ -1,0 +1,68 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "account_id": "1165561124",
+                "inserted_at": "2020-07-25T00:32:47.930021Z",
+                "role": "admin",
+                "user_id": "2028946474"
+            },
+            "id": "1378429633",
+            "links": {
+                "self": "/accounts/1165561124/account_users/1378429633"
+            },
+            "relationships": {
+                "account": {
+                    "data": {
+                        "id": "",
+                        "type": "account"
+                    }
+                },
+                "campaign_account_users": {},
+                "user": {
+                    "data": {
+                        "id": "2028946474",
+                        "type": "user"
+                    }
+                }
+            },
+            "type": "account_user"
+        }
+    ],
+    "included": [
+        {
+            "attributes": {
+                "country_id": "US",
+                "email": "jon.warnow@getthru.io",
+                "feature_flags": null,
+                "first_name": "Jonathan",
+                "inserted_at": "2020-07-24T21:59:45.124911Z",
+                "last_name": "Warnow",
+                "mfa_restricted": false,
+                "phone": "+15108722521"
+            },
+            "id": "2028946474",
+            "links": {
+                "self": "/users/2028946474"
+            },
+            "relationships": {
+                "account_users": {}
+            },
+            "type": "user"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    },
+    "links": {
+        "last": "/v1/accounts/1165561124/account_users?include=user&page[number]=51275&page[size]=1",
+        "next": "/v1/accounts/1165561124/account_users?include=user&page[number]=2&page[size]=1",
+        "self": "/v1/accounts/1165561124/account_users?include=user&page[number]=1&page[size]=1"
+    },
+    "meta": {
+        "current_page": 1,
+        "page_size": 1,
+        "total_pages": 51275,
+        "total_records": 51275
+    }
+}

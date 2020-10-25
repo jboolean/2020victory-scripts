@@ -5,9 +5,9 @@ Written with Node v10
 ## Environment variables
 The scripts expect these environment variables:
 
-`SWEEPERS_SPREADSHEET` - The id of the "Sweepers" spreadsheet (or a copy thereof). The id is found between `/d/` and `/edit` in the url.
-`SWEEPER_NAME` - Your name.
-`THRUTEXT_TOKEN` - The value of `authToken` when logged into Thrutext. 
+- `SWEEPERS_SPREADSHEET` - The id of the "Sweepers" spreadsheet (or a copy thereof). The id is found between `/d/` and `/edit` in the url.
+- `SWEEPER_NAME` - Your name.
+- `THRUTEXT_TOKEN` - The value of `authToken` when logged into Thrutext. 
 
 
 ## Google Sheets Auth

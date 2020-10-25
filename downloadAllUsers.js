@@ -8,6 +8,10 @@ const accountUserIdToUserId = new Map();
 const userIdToAuId = new Map();
 const userSummaries = new Set();
 
+/*
+This script downloads summaries of all Thrutext users into a file users.json.
+ */
+
 function processPage(page) {
   // First, process the au data to get au to u mappings
   page.data.forEach(accountUser => {

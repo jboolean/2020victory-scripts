@@ -1,11 +1,14 @@
 const getAuthClient = require('./getAuthClient');
-const { SWEEPERS_SPREADSHEET, PROMOTIONS_SHEET_NAME } = require('./constants');
+const { SWEEPERS_SPREADSHEET, PROMOTIONS_SHEET_NAME, SWEEPER_NAME } = require('./constants');
 const { google } = require('googleapis');
 const hasCampaigns = require('./hasCampaigns');
 const { getUserByFullName } = require('./lookupUser');
 
+/**
+ * This script takes no arguments and auto-sweeps all unclaimed rows with no linked campaigns.
+ */
+
 const BATCH_SIZE = 100;
-const SWEEPER = 'Julian Boilen';
 
 async function fetchRange(sheets, startRow, endRow) {
   const resp = await sheets.spreadsheets.values.get({
@@ -38,7 +41,6 @@ async function getUpdateValueRangeForRow(sweeper, texter, rowNum) {
     const texterHasCampaigns = await hasCampaigns(user.accountUserId);
 
     if (!texterHasCampaigns) {
-      // console.log('NLC:', texter);
 
       const url = `https://democrats.textforvictory2020.com/admin/users/${user.accountUserId}`;
 
@@ -46,10 +48,9 @@ async function getUpdateValueRangeForRow(sweeper, texter, rowNum) {
       return {
         range: `${PROMOTIONS_SHEET_NAME}!B${rowNum}:E${rowNum}`,
         majorDimension: 'ROWS',
-        values: [[SWEEPER, '', url, 'No linked campaigns']]
+        values: [[SWEEPER_NAME, '', url, 'No linked campaigns']]
       };
     }
-    // console.log('HAS:', texter);
     return null;
 
 
